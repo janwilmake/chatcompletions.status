@@ -1,0 +1,18 @@
+[
+  {
+    "domain": "status.openai.com",
+    "apiString": "API"
+  },
+  {
+    "domain": "status.anthropic.com",
+    "apiString": "api.anthropic.com"
+  },
+  {
+    "domain": "status.deepseek.com",
+    "componentId": "j4n367d9mh3x"
+  },
+  {
+    "domain": "groqstatus.com",
+    "apiString": "API"
+  }
+]

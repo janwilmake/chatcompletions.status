@@ -1,37 +1,23 @@
-interface StatusPage {
-  domain: string;
-  componentId?: string; // Some status pages need specific component IDs
-  apiString?: string; // String to look for in component names if no ID
-}
-
-// Configuration for each provider's status page
-const AI_STATUS_PAGES: StatusPage[] = [
-  {
-    domain: "status.openai.com",
-    apiString: "API", // OpenAI's status page identifies API component by name
-  },
-  {
-    domain: "status.anthropic.com",
-    apiString: "api.anthropic.com", // Anthropic's status uses component names
-  },
-  {
-    domain: "status.deepseek.com",
-    componentId: "j4n367d9mh3x", // DeepSeek uses specific component IDs
-  },
-  {
-    domain: "groqstatus.com",
-    apiString: "API", // Groq uses component names
-  },
-];
-
-// Store in Cloudflare KV for persistence across worker invocations
-interface CachedData {
-  statuses: Record<string, boolean>;
-  timestamp: number;
-}
+import AI_STATUS_PAGES from "./status-pages.json";
 
 export default {
   async fetch(request: Request, env: any, ctx: any): Promise<Response> {
+    if (request.method === "OPTIONS") {
+      return new Response(null, {
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
+          "Access-Control-Allow-Headers": "Content-Type, Authorization",
+        },
+      });
+    }
+
+    const corsHeaders = {
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
+      "Access-Control-Allow-Headers": "Content-Type, Authorization",
+    };
+
     console.log("REQUEST STATUS");
     const cache = caches.default;
     const cacheKey = new Request("https://api-status.internal/status");
@@ -92,6 +78,7 @@ export default {
 
     response = new Response(JSON.stringify(responseData, null, 2), {
       headers: {
+        ...corsHeaders,
         "Content-Type": "application/json",
         "Cache-Control": "public, max-age=300, stale-while-revalidate=8640000",
       },

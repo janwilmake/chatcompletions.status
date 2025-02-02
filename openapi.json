@@ -1,0 +1,90 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "AI Services Status API",
+    "description": "API for checking the operational status of various AI service providers by aggregating their status pages",
+    "version": "1.0.0",
+    "contact": {
+      "name": "API Support"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://status.chatcompletions.com",
+      "description": "Production server"
+    }
+  ],
+  "paths": {
+    "/": {
+      "get": {
+        "summary": "Get AI services operational status",
+        "description": "Returns the current operational status of various AI service providers including OpenAI, Anthropic, DeepSeek, and Groq",
+        "operationId": "getServicesStatus",
+        "responses": {
+          "200": {
+            "description": "Successfully retrieved services status",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "required": ["updated", "services"],
+                  "properties": {
+                    "updated": {
+                      "type": "string",
+                      "format": "date-time",
+                      "description": "Timestamp of when the status was last updated",
+                      "example": "2024-02-02T12:00:00Z"
+                    },
+                    "services": {
+                      "type": "object",
+                      "required": ["openai", "anthropic", "deepseek", "groq"],
+                      "properties": {
+                        "openai": {
+                          "type": "boolean",
+                          "description": "Operational status of OpenAI API",
+                          "example": true
+                        },
+                        "anthropic": {
+                          "type": "boolean",
+                          "description": "Operational status of Anthropic API",
+                          "example": true
+                        },
+                        "deepseek": {
+                          "type": "boolean",
+                          "description": "Operational status of DeepSeek API",
+                          "example": true
+                        },
+                        "groq": {
+                          "type": "boolean",
+                          "description": "Operational status of Groq API",
+                          "example": true
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string",
+                      "description": "Error message",
+                      "example": "Failed to fetch status data"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
