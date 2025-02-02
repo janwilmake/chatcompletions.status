@@ -2,11 +2,8 @@
   "openapi": "3.0.0",
   "info": {
     "title": "AI Services Status API",
-    "description": "API for checking the operational status of various AI service providers by aggregating their status pages",
-    "version": "1.0.0",
-    "contact": {
-      "name": "API Support"
-    }
+    "description": "API for checking operational status and details of various AI service providers",
+    "version": "1.0.0"
   },
   "servers": [
     {
@@ -15,14 +12,14 @@
     }
   ],
   "paths": {
-    "/": {
+    "/status": {
       "get": {
-        "summary": "Get AI services operational status",
-        "description": "Returns the current operational status of various AI service providers including OpenAI, Anthropic, DeepSeek, and Groq",
         "operationId": "getServicesStatus",
+        "summary": "Get operational status",
+        "description": "Returns current operational status of all AI service providers",
         "responses": {
           "200": {
-            "description": "Successfully retrieved services status",
+            "description": "Successfully retrieved service statuses",
             "content": {
               "application/json": {
                 "schema": {
@@ -32,33 +29,15 @@
                     "updated": {
                       "type": "string",
                       "format": "date-time",
-                      "description": "Timestamp of when the status was last updated",
-                      "example": "2024-02-02T12:00:00Z"
+                      "description": "Last status update timestamp"
                     },
                     "services": {
                       "type": "object",
-                      "required": ["openai", "anthropic", "deepseek", "groq"],
                       "properties": {
-                        "openai": {
-                          "type": "boolean",
-                          "description": "Operational status of OpenAI API",
-                          "example": true
-                        },
-                        "anthropic": {
-                          "type": "boolean",
-                          "description": "Operational status of Anthropic API",
-                          "example": true
-                        },
-                        "deepseek": {
-                          "type": "boolean",
-                          "description": "Operational status of DeepSeek API",
-                          "example": true
-                        },
-                        "groq": {
-                          "type": "boolean",
-                          "description": "Operational status of Groq API",
-                          "example": true
-                        }
+                        "openai": { "type": "boolean" },
+                        "anthropic": { "type": "boolean" },
+                        "deepseek": { "type": "boolean" },
+                        "groq": { "type": "boolean" }
                       }
                     }
                   }
@@ -73,12 +52,27 @@
                 "schema": {
                   "type": "object",
                   "properties": {
-                    "error": {
-                      "type": "string",
-                      "description": "Error message",
-                      "example": "Failed to fetch status data"
-                    }
+                    "error": { "type": "string" }
                   }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/providers.json": {
+      "get": {
+        "operationId": "getProvidersInfo",
+        "summary": "Get providers information",
+        "description": "Returns detailed information about AI providers including supported models and pricing",
+        "responses": {
+          "200": {
+            "description": "Successfully retrieved providers information",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "https://status.chatcompletions.com/providers.schema.json"
                 }
               }
             }
