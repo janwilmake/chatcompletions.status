@@ -1,82 +1,97 @@
 {
-  "openai": {
-    "description": "Best uptime and ratelimits",
-    "basePath": "https://api.openai.com/v1",
-    "apiKeyUrl": "https://platform.openai.com/api-keys",
-    "models": [
-      { "id": "gpt-4o-mini", "promptCpm": 0.15, "completionCpm": 0.6 },
-      { "id": "o3-mini", "promptCpm": 1.1, "completionCpm": 4.4 },
-      { "id": "gpt-4o", "promptCpm": 2.5, "completionCpm": 10.0 },
-      { "id": "o1", "promptCpm": 15, "completionCpm": 60 }
-    ]
-  },
-  "anthropic": {
-    "description": "Good for fast reasoning",
-    "basePath": "https://anthropic.actionschema.com",
-    "apiKeyUrl": "https://console.anthropic.com/settings/keys",
-    "models": [
-      {
-        "id": "claude-3-5-haiku-latest",
-        "promptCpm": 0.25,
-        "completionCpm": 1.25
-      },
-      {
-        "id": "claude-3-5-sonnet-latest",
-        "promptCpm": 3.0,
-        "completionCpm": 15.0
-      },
-      {
-        "id": "claude-3-opus-latest",
-        "promptCpm": 15.0,
-        "completionCpm": 75.0
-      }
-    ]
-  },
-  "deepseek": {
-    "description": "Often down",
-    "basePath": "https://api.deepseek.com/v1",
-    "apiKeyUrl": "https://platform.deepseek.com/api_keys",
-    "models": [
-      {
-        "id": "deepseek-chat",
-        "promptCpm": 0.14,
-        "completionCpm": 0.28
-      },
-      {
-        "id": "deepseek-reasoner",
-        "promptCpm": 0.55,
-        "completionCpm": 2.19
-      }
-    ]
-  },
-  "groq": {
-    "description": "Low ratelimits",
-    "basePath": "https://api.groq.com/openai/v1",
-    "apiKeyUrl": "https://console.groq.com/keys",
-    "models": [
-      {
-        "id": "deepseek-r1-distill-llama-70b",
-        "promptCpm": 0.07,
-        "completionCpm": 0.07
-      },
-      { "id": "gemma2-9b-it", "promptCpm": 0.2, "completionCpm": 0.2 },
-      {
-        "id": "llama-3.1-8b-instant",
-        "promptCpm": 0.59,
-        "completionCpm": 0.79
-      },
-      { "id": "llama3-8b-8192", "promptCpm": 0.05, "completionCpm": 0.08 },
-      {
-        "id": "llama-3.3-70b-versatile",
-        "promptCpm": 0.89,
-        "completionCpm": 0.89
-      },
-      {
-        "id": "llama3-groq-8b-8192-tool-use-preview",
-        "promptCpm": 0.19,
-        "completionCpm": 0.19
-      },
-      { "id": "mixtral-8x7b-32768", "promptCpm": 0.24, "completionCpm": 0.24 }
-    ]
+  "$schema": "providers.schema.json",
+  "providers": {
+    "openai": {
+      "id": "openai",
+      "statusUrl": "https://status.openai.com",
+      "statusName": "API",
+      "description": "Best uptime and ratelimits",
+      "basePath": "https://api.openai.com/v1",
+      "apiKeyUrl": "https://platform.openai.com/api-keys",
+      "models": [
+        { "id": "gpt-4o-mini", "promptCpm": 0.15, "completionCpm": 0.6 },
+        { "id": "o3-mini", "promptCpm": 1.1, "completionCpm": 4.4 },
+        { "id": "gpt-4o", "promptCpm": 2.5, "completionCpm": 10.0 },
+        { "id": "o1", "promptCpm": 15, "completionCpm": 60 }
+      ]
+    },
+    "anthropic": {
+      "id": "anthropic",
+      "statusUrl": "https://status.anthropic.com",
+      "statusName": "api.anthropic.com",
+      "description": "Good for fast reasoning",
+      "basePath": "https://anthropic.actionschema.com",
+      "apiKeyUrl": "https://console.anthropic.com/settings/keys",
+      "models": [
+        {
+          "id": "claude-3-5-haiku-latest",
+          "promptCpm": 0.25,
+          "completionCpm": 1.25
+        },
+        {
+          "id": "claude-3-5-sonnet-latest",
+          "promptCpm": 3.0,
+          "completionCpm": 15.0
+        },
+        {
+          "id": "claude-3-opus-latest",
+          "promptCpm": 15.0,
+          "completionCpm": 75.0
+        }
+      ]
+    },
+    "deepseek": {
+      "id": "deepseek",
+      "statusUrl": "status.deepseek.com",
+      "statusId": "j4n367d9mh3x",
+      "description": "Often down",
+      "basePath": "https://api.deepseek.com/v1",
+      "apiKeyUrl": "https://platform.deepseek.com/api_keys",
+      "models": [
+        {
+          "id": "deepseek-chat",
+          "promptCpm": 0.14,
+          "completionCpm": 0.28
+        },
+        {
+          "id": "deepseek-reasoner",
+          "promptCpm": 0.55,
+          "completionCpm": 2.19
+        }
+      ]
+    },
+    "groq": {
+      "id": "groq",
+      "statusUrl": "https://groqstatus.com",
+      "statusName": "API",
+      "description": "Low ratelimits",
+      "basePath": "https://api.groq.com/openai/v1",
+      "apiKeyUrl": "https://console.groq.com/keys",
+      "models": [
+        {
+          "id": "deepseek-r1-distill-llama-70b",
+          "promptCpm": 0.07,
+          "completionCpm": 0.07
+        },
+        { "id": "gemma2-9b-it", "promptCpm": 0.2, "completionCpm": 0.2 },
+        {
+          "id": "llama-3.1-8b-instant",
+          "promptCpm": 0.59,
+          "completionCpm": 0.79
+        },
+        { "id": "llama3-8b-8192", "promptCpm": 0.05, "completionCpm": 0.08 },
+        {
+          "id": "llama-3.3-70b-versatile",
+          "promptCpm": 0.89,
+          "completionCpm": 0.89
+        },
+        {
+          "id": "llama3-groq-8b-8192-tool-use-preview",
+          "promptCpm": 0.19,
+          "completionCpm": 0.19
+        },
+        { "id": "mixtral-8x7b-32768", "promptCpm": 0.24, "completionCpm": 0.24 }
+      ]
+    }
   }
 }

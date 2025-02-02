@@ -1,20 +1,40 @@
 {
-  "description": "Object with keys being provider IDs, and values being useful metadata about this provider.",
   "type": "object",
-  "additionalProperties": {
-    "type": "object",
-    "properties": {
-      "description": { "type": "string" },
-      "basePath": { "type": "string" },
-      "apiKeyUrl": { "type": "string" },
-      "models": {
-        "type": "array",
-        "items": {
-          "type": "object",
-          "properties": {
-            "id": { "type": "string" },
-            "promptCpm": { "type": "number" },
-            "completionCpm": { "type": "number" }
+  "required": ["$schema", "providers"],
+  "properties": {
+    "$schema": { "type": "string" },
+    "providers": {
+      "description": "Object with keys being provider IDs, and values being useful metadata about this provider.",
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "required": [
+          "id",
+          "description",
+          "basePath",
+          "apiKeyUrl",
+          "models",
+          "statusUrl"
+        ],
+        "properties": {
+          "id": { "type": "string" },
+          "description": { "type": "string" },
+          "basePath": { "type": "string" },
+          "statusUrl": { "type": "string" },
+          "statusName": { "type": "string" },
+          "statusId": { "type": "string" },
+          "apiKeyUrl": { "type": "string" },
+          "models": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["id", "promptCpm", "completionCpm"],
+              "properties": {
+                "id": { "type": "string" },
+                "promptCpm": { "type": "number" },
+                "completionCpm": { "type": "number" }
+              }
+            }
           }
         }
       }
