@@ -1,0 +1,8 @@
+{
+  "name": "chatcompletions_status",
+  "dev": { "port": 3000 },
+  "compatibility_date": "2025-01-30",
+  "assets": { "directory": "./" },
+  "main": "status.ts",
+  "routes": [{ "pattern": "status.chatcompletions.com", "custom_domain": true }]
+}
