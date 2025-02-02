@@ -12,7 +12,7 @@
     }
   ],
   "paths": {
-    "/status": {
+    "/status.json": {
       "get": {
         "operationId": "getServicesStatus",
         "summary": "Get operational status",
