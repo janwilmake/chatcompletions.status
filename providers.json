@@ -4,6 +4,7 @@
     "cloudflare": {
       "id": "cloudflare",
       "basePath": "https://api.cloudflare.com/client/v4/accounts/{CLOUDFLARE_ACCOUNT_ID}/ai/v1",
+      "basePathVariables": ["CLOUDFLARE_ACCOUNT_ID"],
       "apiKeyUrl": "https://developers.cloudflare.com/fundamentals/api/get-started/create-token/",
       "description": "Temporary Discount!",
       "models": [

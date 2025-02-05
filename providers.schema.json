@@ -20,6 +20,10 @@
           "id": { "type": "string" },
           "description": { "type": "string" },
           "basePath": { "type": "string" },
+          "basePathVariables": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
           "statusUrl": { "type": "string" },
           "statusName": { "type": "string" },
           "statusId": { "type": "string" },
@@ -37,7 +41,8 @@
               }
             }
           }
-        }
+        },
+        "additionalProperties": false
       }
     }
   }
