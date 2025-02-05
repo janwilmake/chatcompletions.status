@@ -3,7 +3,7 @@
   "providers": {
     "cloudflare": {
       "id": "cloudflare",
-      "basePath": "https://api.cloudflare.com/client/v4/accounts/${env.CLOUDFLARE_ACCOUNT_ID}/ai/v1",
+      "basePath": "https://api.cloudflare.com/client/v4/accounts/{CLOUDFLARE_ACCOUNT_ID}/ai/v1",
       "apiKeyUrl": "https://developers.cloudflare.com/fundamentals/api/get-started/create-token/",
       "description": "Temporary Discount!",
       "models": [
@@ -63,7 +63,7 @@
       "id": "openai",
       "statusUrl": "https://status.openai.com",
       "statusName": "API",
-      "description": "* Not that open",
+      "description": "Not that open *",
       "basePath": "https://api.openai.com/v1",
       "apiKeyUrl": "https://platform.openai.com/api-keys",
       "models": [
