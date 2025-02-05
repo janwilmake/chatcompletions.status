@@ -106,7 +106,7 @@
       "id": "deepseek",
       "statusUrl": "https://status.deepseek.com",
       "statusId": "j4n367d9mh3x",
-      "description": "The real OpenAI - Often down",
+      "description": "The real OpenAI",
       "basePath": "https://api.deepseek.com/v1",
       "apiKeyUrl": "https://platform.deepseek.com/api_keys",
       "models": [
