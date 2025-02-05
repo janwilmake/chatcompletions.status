@@ -15,6 +15,27 @@
         { "id": "o1", "promptCpm": 15, "completionCpm": 60 }
       ]
     },
+    "cloudflare": {
+      "id": "cloudflare",
+      "basePath": "https://api.cloudflare.com/client/v4/accounts/${env.CLOUDFLARE_ACCOUNT_ID}/ai/v1",
+      "apiKeyUrl": "https://developers.cloudflare.com/fundamentals/api/get-started/create-token/",
+      "description": "Temporary Discount",
+      "models": [
+        {
+          "id": "@cf/deepseek-ai/deepseek-r1-distill-qwen-32b",
+          "completionCpm": 0.5,
+          "promptCpm": 0.5
+        },
+        {
+          "id": "@cf/meta/llama-3.3-70b-instruct-fp8-fast",
+          "completionCpm": 0.75,
+          "promptCpm": 0.75
+        }
+      ],
+      "statusUrl": "https://www.cloudflarestatus.com/api/v2/summary.json",
+      "statusId": "zvm7mqn92xzc"
+    },
+
     "anthropic": {
       "id": "anthropic",
       "statusUrl": "https://status.anthropic.com",
@@ -42,7 +63,7 @@
     },
     "deepseek": {
       "id": "deepseek",
-      "statusUrl": "status.deepseek.com",
+      "statusUrl": "https://status.deepseek.com",
       "statusId": "j4n367d9mh3x",
       "description": "Often down",
       "basePath": "https://api.deepseek.com/v1",
