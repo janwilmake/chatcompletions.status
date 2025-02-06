@@ -34,7 +34,7 @@
       "apiKeyUrl": "https://console.groq.com/keys",
       "models": [
         {
-          "id": "deepseek-r1-distill-llama-70b",
+          "id": "deepseek-r1-distill-llama-70b-specdec",
           "title": "Deepseek R1 70B",
           "promptCpm": 5,
           "completionCpm": 5
