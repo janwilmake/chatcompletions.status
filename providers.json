@@ -1,30 +1,6 @@
 {
   "$schema": "providers.schema.json",
   "providers": {
-    "cloudflare": {
-      "id": "cloudflare",
-      "basePath": "https://api.cloudflare.com/client/v4/accounts/{CLOUDFLARE_ACCOUNT_ID}/ai/v1",
-      "basePathVariables": ["CLOUDFLARE_ACCOUNT_ID"],
-      "apiKeyUrl": "https://developers.cloudflare.com/fundamentals/api/get-started/create-token/",
-      "description": "Temporary Discount!",
-      "models": [
-        {
-          "id": "@cf/meta/llama-3.3-70b-instruct-fp8-fast",
-          "title": "Llama 3.3 70B",
-          "completionCpm": 0.75,
-          "promptCpm": 0.75
-        },
-        {
-          "id": "@cf/deepseek-ai/deepseek-r1-distill-qwen-32b",
-          "title": "Deepseek R1 32B",
-          "completionCpm": 0.5,
-          "promptCpm": 0.5
-        }
-      ],
-      "statusUrl": "https://www.cloudflarestatus.com/api/v2/summary.json",
-      "statusId": "zvm7mqn92xzc"
-    },
-
     "groq": {
       "id": "groq",
       "statusUrl": "https://groqstatus.com",
@@ -58,6 +34,29 @@
           "completionCpm": 0.24
         }
       ]
+    },
+    "cloudflare": {
+      "id": "cloudflare",
+      "basePath": "https://api.cloudflare.com/client/v4/accounts/{CLOUDFLARE_ACCOUNT_ID}/ai/v1",
+      "basePathVariables": ["CLOUDFLARE_ACCOUNT_ID"],
+      "apiKeyUrl": "https://developers.cloudflare.com/fundamentals/api/get-started/create-token/",
+      "description": "Temporary Discount!",
+      "models": [
+        {
+          "id": "@cf/meta/llama-3.3-70b-instruct-fp8-fast",
+          "title": "Llama 3.3 70B",
+          "completionCpm": 0.75,
+          "promptCpm": 0.75
+        },
+        {
+          "id": "@cf/deepseek-ai/deepseek-r1-distill-qwen-32b",
+          "title": "Deepseek R1 32B",
+          "completionCpm": 0.5,
+          "promptCpm": 0.5
+        }
+      ],
+      "statusUrl": "https://www.cloudflarestatus.com/api/v2/summary.json",
+      "statusId": "zvm7mqn92xzc"
     },
 
     "openai": {
