@@ -10,23 +10,33 @@
       "apiKeyUrl": "https://console.groq.com/keys",
       "models": [
         {
-          "id": "deepseek-r1-distill-llama-70b-specdec",
+          "id": "llama-3.3-70b-versatile",
+          "title": "Llama 3.3 70B",
+          "promptCpm": 0.89,
+          "completionCpm": 0.89
+        },
+
+        {
+          "id": "deepseek-r1-distill-llama-70b",
           "title": "Deepseek R1 70B",
           "promptCpm": 5,
           "completionCpm": 5
         },
+
+        {
+          "id": "deepseek-r1-distill-llama-70b-specdec",
+          "title": "Deepseek R1 70B (FAST)",
+          "promptCpm": 5,
+          "completionCpm": 5
+        },
+
         {
           "id": "llama3-8b-8192",
           "title": "Llama 3 8B",
           "promptCpm": 0.05,
           "completionCpm": 0.08
         },
-        {
-          "id": "llama-3.3-70b-versatile",
-          "title": "Llama 3.3 70B",
-          "promptCpm": 0.89,
-          "completionCpm": 0.89
-        },
+
         {
           "id": "mixtral-8x7b-32768",
           "title": "Mixtral 8x7B Instruct 32k",
