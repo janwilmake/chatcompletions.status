@@ -50,7 +50,7 @@
       "basePath": "https://api.cloudflare.com/client/v4/accounts/{CLOUDFLARE_ACCOUNT_ID}/ai/v1",
       "basePathVariables": ["CLOUDFLARE_ACCOUNT_ID"],
       "apiKeyUrl": "https://developers.cloudflare.com/fundamentals/api/get-started/create-token/",
-      "description": "Temporary Discount!",
+      "description": "Experimental",
       "models": [
         {
           "id": "@cf/meta/llama-3.3-70b-instruct-fp8-fast",
