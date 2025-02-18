@@ -1,6 +1,27 @@
 {
   "$schema": "providers.schema.json",
   "providers": {
+    "google": {
+      "basePath": "https://generativelanguage.googleapis.com/v1beta/openai",
+      "apiKeyUrl": "https://aistudio.google.com/app/apikey",
+      "description": "Great value",
+      "id": "google",
+
+      "models": [
+        {
+          "title": "Gemini 2.0 Flash",
+          "id": "models/gemini-2.0-flash",
+          "promptCpm": 0.1,
+          "completionCpm": 0.4
+        },
+        {
+          "title": "Gemini 2.0 Flash Lite",
+          "id": "models/gemini-2.0-flash-lite-preview-02-05",
+          "promptCpm": 0.075,
+          "completionCpm": 0.3
+        }
+      ]
+    },
     "groq": {
       "id": "groq",
       "statusUrl": "https://groqstatus.com",
