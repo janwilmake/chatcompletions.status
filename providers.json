@@ -98,12 +98,21 @@
           "promptCpm": 0.25,
           "completionCpm": 1.25
         },
+
+        {
+          "id": "claude-3-7-sonnet-20250219",
+          "title": "Claude 3.7 Sonnet",
+          "promptCpm": 3.0,
+          "completionCpm": 15.0
+        },
+
         {
           "id": "claude-3-5-sonnet-latest",
           "title": "Claude 3.5 Sonnet",
           "promptCpm": 3.0,
           "completionCpm": 15.0
         },
+
         {
           "id": "claude-3-opus-latest",
           "title": "Claude 3 Opus",
